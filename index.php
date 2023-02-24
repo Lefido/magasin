@@ -9,7 +9,7 @@ require_once('connexion.php');
 
 // On prépare la requête
 
-$sql = 'SELECT * FROM articles';
+$sql = 'SELECT * FROM articles ORDER BY produit ASC';
 
 $query = $db->prepare($sql);
 
@@ -73,11 +73,18 @@ include_once('head.php')
                         ?>
                         <tr>
                             <td><?= $produit['id'] ?></td>
-                            <td><?= $produit['produit'] ?></td>
+                            <td> <a href="./detail.php?id=<?= $produit['id'] ?>" class="link-primary"> <?= $produit['produit'] ?></a></td>
                             <td><?= $produit['quantite'] ?></td>
                             <td><?= $produit['prix'] ?>€</td>
-                            <td><a href="detail.php?id=<?= $produit['id'] ?>">Voir</a> <a href="edit.php?id=<?= $produit['id'] ?>">Modifier</a></td>
+                            <td>
+                            
+                            <!-- <button class="edit btn btn btn-warning" data-id="<?= $produit['id'] ?>">Modifer</button> -->
+                            
+                            <button class="delete btn btn-danger" data-id="<?= $produit['id'] ?>" data-produit="<?= $produit['produit'] ?>">Supprimer</button>
+
+                            </td>
                         </tr>
+
                         <?php
                         }
                         ?>
@@ -88,6 +95,7 @@ include_once('head.php')
         </div>
     </main>
 
+    <script src="script.js"></script>
     
 </body>
 </html>

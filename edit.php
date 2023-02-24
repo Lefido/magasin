@@ -84,6 +84,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 <!DOCTYPE html>
 <html lang="fr">
 <?php
+
 include_once('head.php');
 ?>
 
@@ -134,6 +135,10 @@ include_once('head.php');
                     <button class="btn btn-primary form-control">Enregistrer</button>
                     
                 </form>
+
+                <button onclick="history.go(-1)" class="btn btn-secondary form-control">Annuler</button>
+                    
+
             </section>
         </div>
     </main>

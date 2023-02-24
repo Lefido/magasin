@@ -88,7 +88,7 @@ include_once('head.php');
 
                     <div class="form-group">
                         <label for="descriptif">Description</label>
-                        <textarea type="text" id="descriptif" name="descriptif" class="form-control"></textarea>
+                        <textarea type="text" id="descriptif" name="descriptif" class="form-control" rows="10" cols="10"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -104,11 +104,16 @@ include_once('head.php');
                    
                     <button class="btn btn-primary form-control">Enregistrer</button>
                     
+                    
                 </form>
+
+                <button onclick="history.go(-1)" class="btn btn-secondary form-control">Annuler</button>
+                    
             </section>
         </div>
     </main>
 
-    
+    <script src="script.js"></script>
+
 </body>
 </html>
