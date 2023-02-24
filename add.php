@@ -64,7 +64,7 @@ include_once('head.php');
         <div class="row">
             <section class="col-12">
             <?php
-                    
+            
                     if(!empty($_SESSION['erreur'])) {
                         echo '<div class="alert alert-danger" role="alert">' . $_SESSION['erreur'] . 
 

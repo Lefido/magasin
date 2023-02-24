@@ -25,7 +25,6 @@ require_once('close.php');
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 
