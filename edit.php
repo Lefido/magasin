@@ -22,11 +22,14 @@ if($_POST) {
         $quantite = strip_tags($_POST['quantite']);
         $prix = strip_tags($_POST['prix']);
 
-        $sql = 'UPDATE `articles` SET `produit`=:produit, `reference`=:reference, `descriptif`=:descriptif, `quantite`=:quantite, `prix`=:prix WHERE `id`=:id);';
+        var_dump($_POST);
+
+        $sql = 'UPDATE `articles` SET `produit`=:produit, `reference`=:reference, `descriptif`=:descriptif, `quantite`=:quantite, `prix`=:prix WHERE `id`=:id;';
+
+        var_dump($sql);
 
         $query = $db->prepare($sql);
 
-       
         $query->bindValue(':id', $id, PDO::PARAM_INT);
         $query->bindValue(':produit', $produit, PDO::PARAM_STR);
         $query->bindValue(':reference', $reference, PDO::PARAM_STR);
@@ -76,23 +79,14 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     header('Location: index.php');
 }
 
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier un article</title>
-    <link rel="stylesheet" href="style.css">
+<?php
+include_once('head.php');
+?>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-</head>
 <body>
 
     <main class="container">
